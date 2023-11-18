@@ -1,0 +1,142 @@
+﻿@model ProjectViews.Areas.User.Models.HomeUserViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/User/Views/Shared/_UserLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+
+    <!-- Add your CSS links here -->
+    <!-- Example: <link rel="stylesheet" href="path/to/your/style.css"> -->
+    <!-- Add your script tags here for JavaScript -->
+    <!-- Example: <script src="path/to/your/script.js"></script -->
+</head>
+<body>
+
+    <div class="fs_menu_overlay"></div>
+    <div class="hamburger_menu">
+        <div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
+        <div class="hamburger_menu_content text-right">
+            <ul class="menu_top_nav">
+                <li class="menu_item has-children">
+                    <a href="#">
+                        usd
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="menu_selection">
+                        <li><a href="#">cad</a></li>
+                        <li><a href="#">aud</a></li>
+                        <li><a href="#">eur</a></li>
+                        <li><a href="#">gbp</a></li>
+                    </ul>
+                </li>
+                <!-- ... (Thêm các mục menu khác ở đây) ... -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slider -->
+
+    <div class="main_slider" style="background-image:url(images/slider_1.jpg)">
+        <div class="container fill_height">
+            <div class="row align-items-center fill_height">
+                <div class="col">
+                    <div class="main_slider_content">
+                        <h6>Spring / Summer Collection 2017</h6>
+                        <h1>Get up to 30% Off New Arrivals</h1>
+                        <div class="red_button shop_now_button"><a href="#">shop now</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner -->
+
+    <div class="banner">
+        <!-- ... (Phần banner giữ nguyên) ... -->
+    </div>
+
+    <!-- New Arrivals -->
+
+    <div class="new_arrivals">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <div class="section_title new_arrivals_title">
+                        <h2>New Arrivals</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col text-center">
+                    <div class="new_arrivals_sorting">
+                        <ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
+                            <!-- Thêm các nút lọc ở đây nếu cần -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
+                        @foreach (var item in Model.newArrivals)
+                        {
+                            <div class="product-item men">
+                                <div class="product discount product_filter">
+                                    <div class="product_image">
+                                        <img src="~/UserAsssets/images/product_1.png" alt="">
+                                    </div>
+                                    <div class="favorite favorite_left"></div>
+                                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
+                                    <div class="product_info">
+                                        <h6 class="product_name"><a href="single.html">@item.Name</a></h6>
+                                        <div class="product_price">@item.Name<span>@item.Price</span></div>
+                                    </div>
+                                </div>
+                                <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Deal of the week -->
+
+    <div class="deal_ofthe_week">
+        <!-- ... (Phần deal of the week giữ nguyên) ... -->
+    </div>
+
+    <!-- Best Sellers -->
+
+    <div class="best_sellers">
+        <!-- ... (Phần best sellers giữ nguyên) ... -->
+    </div>
+
+    <!-- Benefit -->
+
+    <div class="benefit">
+        <!-- ... (Phần benefit giữ nguyên) ... -->
+    </div>
+
+    <!-- Blogs -->
+
+    <div class="blogs">
+        <!-- ... (Phần blogs giữ nguyên) ... -->
+    </div>
+
+    <!-- Newsletter -->
+
+    <div class="newsletter">
+        <!-- ... (Phần newsletter giữ nguyên) ... -->
+    </div>
+
+</body>
+</html>
